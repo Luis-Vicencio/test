@@ -86,6 +86,33 @@ app.post('/api/create-user', (req, res) => {
   });
 });
 
+// Reset Password Route
+app.post('/reset-password', (req, res) => {
+  const { email, newPassword } = req.body;
+
+  // Check if the required fields are provided
+  if (!email || !newPassword) {
+    return res.status(400).send('Email and new password are required.');
+  }
+
+  // Update the password in the database
+  const query = 'UPDATE userinfo SET password = ? WHERE email = ?';
+  db.query(query, [newPassword, email], (err, result) => {
+    if (err) {
+      console.error('Database error:', err);
+      return res.status(500).send('Error updating password.');
+    }
+
+    if (result.affectedRows === 0) {
+      return res.status(404).send('Email not found.');
+    }
+
+    console.log(`Password updated for ${email}`);
+    res.send('Password reset successful.');
+  });
+});
+
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
