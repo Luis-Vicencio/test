@@ -108,7 +108,7 @@ app.post('/reset-password', (req, res) => {
     }
 
     console.log(`Password updated for ${email}`);
-    res.send('Password reset successful.');
+    res.redirect('/login-page.html');
   });
 });
 
