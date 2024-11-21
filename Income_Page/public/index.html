@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="expense_container">
+        <h2 class="title-text">Add Transaction</h2>
+        <div class="form-and-graph">
+            <form id="transaction-form">
+                <div class="toggle-container">
+                    <label><input type="radio" name="transaction-type" value="income" checked> Income</label>
+                    <label><input type="radio" name="transaction-type" value="expense"> Expense</label>
+                </div>
+                <div class="category-container">
+                    <div class="left-section">
+                        <select id="transaction-category" required>
+                            <option value="" disabled selected>Select Category</option>
+                        </select>
+                        <div class="input-wrapper">
+                            <span class="dollar-sign">$</span>
+                            <input type="text" class="textbox" placeholder="Enter amount" required>
+                        </div>
+                        <input type="date" id="transaction-date" required>
+                        <button type="submit">Add</button>
+                    </div>
+                    <div class="right-section">
+                        <input type="text" id="new-category" placeholder="New Category">
+                        <button type="button" id="add-category-btn">Add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="expense_container">
+        <button id="report-btn">View Report</button>
+    </div>
+
+    <div class="expense_container" id="chart-section" style="display: none;">
+        <div class="chart-container">
+            <canvas id="income-expense-chart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
