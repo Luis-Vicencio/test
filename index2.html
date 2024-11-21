@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMEPAGE</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet" >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <i class="bx bxl-codepen"><</i>
+                <span>FINANCES</span>
+            </div> 
+                <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <div class="user">
+            <img src="finance-background.jpg" alt="me" class="finance-background">
+                 <div>
+                      <p class="bold">Client B.</p>
+                        <p>Admin</p>
+                     </div>
+             </div>
+        <ul>
+            <li>
+                <a href="index2.html">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Homepage</span>
+                </a>
+                <span class="tooltip">Homepage</span>
+            </li>
+            <li>
+                <a href="income.html">
+                    <i class="bx bx-money-withdraw"></i>
+                    <span class="nav-item">Income</span>
+                </a>
+                <span class="tooltip">Income</span>
+            </li>
+            <li>
+                <a href="budget.html">
+                    <i class="bx bx-math"></i>
+                    <span class="nav-item">Budget</span>
+                </a>
+                <span class="tooltip">Budget</span>
+            </li>
+            <li>
+                <a href="history.html">
+                    <i class="bx bx-history"></i>
+                    <span class="nav-item">History</span>
+                </a>
+                <span class="tooltip">History</span>
+            </li>
+            <li>
+                <a href="investments.html">
+                    <i class="bx bx-wallet"></i>
+                    <span class="nav-item">Investments</span>
+                </a>
+                <span class="tooltip">Investments</span>
+            </li>
+            <li>
+                <a href="logout.html">
+                    <i class="bx bx-log-out"></i>
+                    <span class="nav-item">Logout</span>
+                </a>
+                <span class="tooltip">Logout</span>
+            </li>
+        </ul>
+</div>
+    
+    <div class="main-content">
+        <div class="container">
+        <h1>Your Profile</h1>
+        <h1>Welcome, <span id="user-greeting" plaecholder="User"></span></h1>
+
+        <form id="user-info-form">
+            <input type="number" id="user-income" placeholder="Enter Your Income" required>
+            <input type="number" id="user-expenses" placeholder="Enter Your Expenses" required>
+            <input type="number" id="user-budget" placeholder="Enter Your Budget" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="box">
+            <h2>Income</h2>
+            <p>Your Income this month is $<span id="display-income"></span></p>
+        </div>
+        <div class="box">
+            <h2>Expenses</h2>
+            <p>Your expenses this month are $<span id="display-expenses"></span></p>
+        </div>
+        <div class="box">
+            <h2>Budget</h2>
+            <p>Budget breakdown: $<span id="display-budget"></span></p>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+</body>
+
+<script>
+    let btn = document.querySelector('#btn');
+    let sidebar = document.querySelector('.sidebar');
+
+    btn.onclick = function() {
+        sidebar.classList.toggle('active');
+};
+</script>
+
+</html>
