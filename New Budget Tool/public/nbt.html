@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget.io</title>
+  <link rel="stylesheet" href="nbt.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Budget.io</h1>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="form-section">
+        <h2>Set Category Budget</h2>
+        <form id="budget-form">
+          <select id="category-select" required>
+            <option value="" disabled selected>Select Category</option>
+          </select>
+          <div class="input-container">
+            <span class="currency-symbol">$</span>
+            <input type="number" id="category-budget" placeholder="Budget Amount" min="0" required>
+          </div>
+          <button type="submit">Set Budget</button>
+        </form>
+      </div>
+
+      <div id="warnings"></div>
+
+      <button id="view-report-btn" class="full-width">View Report</button>
+      <div class="chart-section" id="report-section" style="display: none;">
+        <h2>Category Budgets and Spending</h2>
+        <canvas id="expense-chart"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <script src="nbt_script.js"></script>
+</body>
+
+</html>
